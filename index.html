@@ -3,114 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Menino Ney</title>
+    <title>PROJETO SHAPE EM 30 DIAS</title>
     <style>
-        /* Estilo do Fundo */
+        :root {
+            --neon-green: #adff2f;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --white: #ffffff;
+        }
+
         body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--white);
             margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Header --- */
+        header {
             height: 100vh;
-            background: linear-gradient(135deg, #009739 0%, #fed100 100%); /* Cores do Brasil */
-            font-family: 'Arial Black', sans-serif;
-            overflow: hidden;
-        }
-
-        /* Botão Central */
-        #btn-neymar {
-            padding: 30px 60px;
-            font-size: 2rem;
-            background-color: #002776;
-            color: white;
-            border: 5px solid white;
-            border-radius: 100px;
-            cursor: pointer;
-            text-transform: uppercase;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            transition: all 0.2s ease;
-        }
-
-        #btn-neymar:hover {
-            transform: scale(1.1);
-            background-color: #001a50;
-        }
-
-        #btn-neymar:active {
-            transform: scale(0.9);
-        }
-
-        /* Overlay da Tela Cheia */
-        #fullscreen-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            display: none; /* Escondido por padrão */
-            z-index: 1000;
-            justify-content: center;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 5px solid var(--neon-green);
         }
 
-        #fullscreen-overlay img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            color: var(--neon-green);
+            text-shadow: 0 0 20px rgba(173, 255, 47, 0.5);
         }
 
-        /* Botão para Sair da Tela Cheia */
-        #btn-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255,255,255,0.2);
+        header p {
+            font-size: 1.5rem;
+            max-width: 600px;
+        }
+
+        /* --- Countdown --- */
+        .timer-box {
+            background: var(--neon-green);
+            color: #000;
+            padding: 15px 30px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            margin-top: 20px;
+            box-shadow: 0 0 30px rgba(173, 255, 47, 0.4);
+        }
+
+        /* --- Slideshow Simulado --- */
+        .slider {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            margin: 50px 0;
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            height: 400px;
+            animation: slideAnimation 15s infinite;
+        }
+
+        .slide {
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        @keyframes slideAnimation {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* --- O Plano --- */
+        .section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--neon-green);
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: var(--neon-green);
+            font-size: 1.8rem;
+        }
+
+        /* --- Escassez --- */
+        .vagas {
+            background: #ff4757;
             color: white;
-            border: 2px solid white;
             padding: 10px 20px;
-            cursor: pointer;
-            font-family: sans-serif;
+            display: inline-block;
             border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: pulse 1s infinite;
         }
 
-        #btn-close:hover {
-            background: rgba(255,255,255,0.5);
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- Botão Final --- */
+        .cta-btn {
+            display: inline-block;
+            padding: 25px 60px;
+            background-color: var(--neon-green);
+            color: #000;
+            font-size: 2rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 100px;
+            margin-top: 40px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .cta-btn:hover {
+            box-shadow: 0 0 50px var(--neon-green);
+            transform: scale(1.1);
+        }
+
+        footer {
+            padding: 50px;
+            text-align: center;
+            opacity: 0.5;
         }
     </style>
 </head>
 <body>
 
-    <button id="btn-neymar" onclick="ativarNeymar()">VER O ADULTO NEY</button>
+    <header>
+        <h1>PROJETO SHAPE EM 30 DIAS</h1>
+        <p>A estratégia russa para mudar sua carcaça antes que o mês acabe. Sem desculpas, apenas suor.</p>
+        
+        <div class="timer-box">
+            TERMINA EM: <span id="countdown">23:59:59</span>
+        </div>
 
-    <div id="fullscreen-overlay">
-        <button id="btn-close" onclick="fecharNeymar()">SAIR X</button>
-        <img src="https://tm.ibxk.com.br/2022/11/24/24183515082186.jpg" alt="Neymar Jr">
+        <div class="vagas">🔥 RESTAM APENAS 8 VAGAS DISPONÍVEIS!</div>
+    </header>
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1350&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=1350&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1541534741688-6078c6bc35e5?auto=format&fit=crop&w=1350&q=80')"></div>
+        </div>
     </div>
 
+    <section class="section">
+        <h2>O QUE VOCÊ VAI RECEBER?</h2>
+        <p>Esqueça treinos genéricos. Aqui o sistema é bruto.</p>
+
+        <div class="grid">
+            <div class="card">
+                <h3>🥩 Dieta de Guerreiro</h3>
+                <p>Simples, barata e eficaz. Nada de comidas frescas, apenas o que você precisa para crescer ou secar.</p>
+            </div>
+            <div class="card">
+                <h3>🏋️ Treino Blindado</h3>
+                <p>Planilha montada com foco em hipertrofia máxima. Divisão perfeita para 30 dias intensos.</p>
+            </div>
+            <div class="card">
+                <h3>🧠 Estratégia de Mudança</h3>
+                <p>O segredo mental para não abandonar o treino na segunda semana. Disciplina > Motivação.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #111;">
+        <h2>VOCÊ ESTÁ PRONTO PARA O PRÓXIMO NÍVEL?</h2>
+        <p>8 pessoas já garantiram a vaga hoje. O próximo pode ser você ou a sua desculpa.</p>
+        
+        <a href="#" class="cta-btn">ACESSE AQUI</a>
+        
+        <p style="margin-top: 20px; font-style: italic;">Acesso imediato após a confirmação.</p>
+    </section>
+
+    <footer>
+        &copy; 2026 Projeto Shape 30 Dias - Todos os direitos reservados aos fortes.
+    </footer>
+
     <script>
-        function ativarNeymar() {
-            // Mostra o overlay
-            const overlay = document.getElementById('fullscreen-overlay');
-            overlay.style.display = 'flex';
-            
-            // Tenta colocar o navegador em tela cheia de verdade (opcional)
-            if (overlay.requestFullscreen) {
-                overlay.requestFullscreen();
-            }
-        }
+        // --- Lógica da Contagem Regressiva ---
+        let time = 24 * 60 * 60 - 1; // 23h 59min 59seg em segundos
 
-        function fecharNeymar() {
-            // Esconde o overlay
-            const overlay = document.getElementById('fullscreen-overlay');
-            overlay.style.display = 'none';
+        const countdownElement = document.getElementById('countdown');
 
-            // Sai da tela cheia do navegador
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
+        setInterval(() => {
+            const hours = Math.floor(time / 3600);
+            const minutes = Math.floor((time % 3600) / 60);
+            const seconds = time % 60;
+
+            countdownElement.innerText = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            if (time > 0) {
+                time--;
             }
-        }
+        }, 1000);
     </script>
 
 </body>
