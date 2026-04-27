@@ -1,29 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-  <title>Shape 30D</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Terminal</title>
+    <style>
+        /* Estética Hacker / Terminal */
+        body {
+            background-color: #0a0a0a;
+            color: #00ff41; /* Verde clássico do Matrix */
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Efeito de Scanline (linhas de TV antiga) */
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            border: 1px solid #00ff41;
+            padding: 20px;
+            box-shadow: 0 0 15px #00ff41;
+            background: rgba(0, 20, 0, 0.9);
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px #ff0000; /* Detalhe em vermelho para contraste */
+            border-bottom: 2px solid #00ff41;
+            padding-bottom: 10px;
+        }
+
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        .content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #008f11;
+        }
+    </style>
 </head>
+<body>
 
-<body style="font-family: Arial; text-align: center; padding: 20px; background:#111; color:white;">
+    <div class="container">
+        <h1>SISTEMA INVADIDO <span class="blink">_</span></h1>
+        
+        <div class="content">
+            <p>> [STATUS]: Conexão estabelecida...</p>
+            <p>> [ALVO]: Informação descentralizada.</p>
+            <p>> [MENSAGEM]: Aqui você pode inserir o seu texto explicativo. Use parágrafos curtos para manter o estilo de terminal.</p>
+            
+            <hr style="border: 0.5px solid #00ff41;">
+            
+            <h3>Tópico de Análise 01</h3>
+            <p>Insira seus argumentos ou dados aqui. A estética hacker favorece listas e códigos.</p>
+        </div>
+    </div>
 
-  <h1>🔥 Shape 30D</h1>
-  <p>Transforme seu corpo em 30 dias</p>
-
-  <div style="margin-top:30px;">
-    <h2>💪 Emagrecimento + Massa</h2>
-    <p>Perca gordura e ganhe músculo com método simples</p>
-
-    <a href="#">
-      <button style="padding:15px 30px; font-size:18px; background:green; color:white; border:none;">
-        Quero começar agora
-      </button>
-    </a>
-  </div>
-
-  <p style="margin-top:40px; font-size:14px;">
-    Acesso imediato • Serve pra iniciantes • Sem enrolação
-  </p>
+    <footer>
+        &copy; 2026 - Terminal de Acesso Privado
+    </footer>
 
 </body>
 </html>
