@@ -3,185 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BRAINROT UNIVERSE 💀🔥</title>
+    <title>BRAINROT EXTREME - TUNG TUNG EDITION 🥁</title>
     <style>
-        /* FONTE E FUNDO PSICODÉLICO */
+        :root {
+            --neon-yellow: #ccff00;
+            --neon-purple: #9d00ff;
+            --neon-red: #ff003c;
+        }
+
         body {
             margin: 0;
             background: #000;
             font-family: 'Arial Black', sans-serif;
             color: #fff;
             overflow-x: hidden;
-            background: radial-gradient(circle, #ff00ff, #00ffff, #39ff14);
-            background-size: 600% 600%;
-            animation: colors 5s infinite alternate;
-        }
-
-        @keyframes colors {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-
-        /* TÍTULO QUE EXPLODE */
-        .titulo-crazy {
-            font-size: 6rem;
             text-align: center;
-            padding: 50px;
-            text-transform: uppercase;
-            color: #fff;
-            text-shadow: 8px 8px 0px #ff0000, -8px -8px 0px #0000ff;
-            animation: pulse 0.2s infinite;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1) skew(2deg); }
-            50% { transform: scale(1.1) skew(-2deg); }
-            100% { transform: scale(1) skew(2deg); }
+        /* FUNDO COM FLASHES */
+        .bg-flash {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: repeating-linear-gradient(45deg, #000, #111 10px, #000 20px);
+            z-index: -1;
+            opacity: 0.5;
         }
 
-        /* CONTAINER DOS PERSONAGENS */
-        .brainrot-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* TÍTULO VIBRANTE TUNG TUNG */
+        .tung-header {
+            background: var(--neon-yellow);
+            color: #000;
+            padding: 20px;
+            font-size: 3rem;
+            transform: skewY(-3deg);
+            border-bottom: 10px solid var(--neon-red);
+            animation: bounce 0.3s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: skewY(-3deg) scale(1); }
+            to { transform: skewY(-3deg) scale(1.05); }
+        }
+
+        /* GRID DE PERSONAGENS */
+        .grid-rot {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        .personagem-card {
-            background: rgba(0,0,0,0.8);
-            border: 10px solid #fff;
-            border-radius: 40px;
-            padding: 20px;
-            text-align: center;
+        .card {
+            width: 280px;
+            background: #222;
+            border: 6px solid #fff;
+            border-radius: 20px;
+            padding: 15px;
             transition: 0.1s;
             cursor: pointer;
+            box-shadow: 10px 10px 0px var(--neon-purple);
         }
 
-        .personagem-card:hover {
-            transform: scale(1.2) rotate(10deg);
+        .card:hover {
+            transform: scale(1.1) rotate(-5deg);
+            background: var(--neon-purple);
+            border-color: var(--neon-yellow);
+        }
+
+        .img-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #333;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            margin-bottom: 15px;
+            border: 3px solid #444;
+        }
+
+        /* SEÇÃO 67 (SIX SEVEN) */
+        .section-67 {
+            background: var(--neon-red);
+            padding: 40px;
+            margin: 40px 0;
+            border: 10px double #fff;
+        }
+
+        .counter-67 {
+            font-size: 12rem;
+            line-height: 1;
+            text-shadow: 10px 10px #000;
+            animation: flashColor 0.2s infinite;
+        }
+
+        @keyframes flashColor {
+            0% { color: #fff; }
+            50% { color: var(--neon-yellow); }
+            100% { color: #00ff00; }
+        }
+
+        /* BOTÃO TUNG TUNG SAHUR */
+        .btn-tung {
             background: #fff;
             color: #000;
-            border-color: #39ff14;
-        }
-
-        .sprite {
-            font-size: 100px;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        /* SEÇÃO 6 7 8 9 */
-        .seven-six-chaos {
-            background: #fff;
-            color: #000;
-            padding: 60px;
-            text-align: center;
-            border-top: 15px solid #ff00ff;
-            border-bottom: 15px solid #00ffff;
-            margin: 50px 0;
-        }
-
-        .seven-six-chaos h2 {
-            font-size: 4rem;
-            margin: 0;
-        }
-
-        .number-flash {
-            font-size: 10rem;
-            color: #ff0000;
-            font-weight: bold;
-        }
-
-        /* BOTÕES DE SONS (ZUEIRA) */
-        .btn-sound {
-            background: #39ff14;
+            padding: 30px 60px;
+            font-size: 2.5rem;
             border: none;
-            padding: 30px;
-            font-size: 2rem;
-            font-weight: bold;
-            border-radius: 20px;
-            box-shadow: 10px 10px 0px #000;
-            margin: 10px;
+            border-radius: 100px;
             cursor: pointer;
+            box-shadow: 0 15px 0 var(--neon-red);
+            margin-bottom: 50px;
         }
 
-        .btn-sound:active {
-            transform: translate(5px, 5px);
-            box-shadow: 0px 0px 0px #000;
+        .btn-tung:active {
+            transform: translateY(10px);
+            box-shadow: 0 5px 0 #000;
         }
 
         marquee {
-            font-size: 3rem;
-            background: #000;
-            color: #39ff14;
-            padding: 15px;
-            border-bottom: 5px solid #fff;
+            background: var(--neon-purple);
+            font-size: 2rem;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
 
-    <marquee scrollamount="25">SKIBIDI 🚽 SIGMA 🤫 OHIO 💀 SMURF CAT 🐱 BLUE TIE 👔 GRIMACE 🥤</marquee>
+    <div class="bg-flash"></div>
 
-    <h1 class="titulo-crazy">BRAINROT WORLD</h1>
+    <marquee>🥁 TUNG TUNG SAHUR! 🥁 TUNG TUNG SAHUR! 🥁 TUNG TUNG SAHUR! 🥁</marquee>
 
-    <div class="brainrot-grid">
+    <div class="tung-header">
+        TUNG TUNG BRAINROT! 🤫🧏‍♂️
+    </div>
+
+    <div class="grid-rot">
         
-        <div class="personagem-card" onclick="play('Brrr Skibidi Dop Dop Yes Yes!')">
-            <span class="sprite">🚽</span>
-            <h2>SKIBIDI TOILET</h2>
-            <p>O REI DOS BANHEIROS</p>
+        <div class="card" onclick="action('TUNG TUNG SAHUR! 🥁🥁🥁')">
+            <div class="img-placeholder">🥁</div>
+            <h3>TUNG TUNG SAHUR</h3>
+            <p>O som que não deixa ninguém dormir!</p>
         </div>
 
-        <div class="personagem-card" onclick="play('🤫🧏‍♂️ MEWING EM 100%...')">
-            <span class="sprite">🗿</span>
-            <h2>GIGACHAD SIGMA</h2>
-            <p>BEBA O SUCO DO RIZZ</p>
+        <div class="card" onclick="action('SKIBIDI DOP DOP YES YES!')">
+            <div class="img-placeholder">🚽</div>
+            <h3>SKIBIDI BOSS</h3>
+            <p>Rizz nível Ohio!</p>
         </div>
 
-        <div class="personagem-card" onclick="play('WE LIVE, WE LOVE, WE LIE! 🍄')">
-            <span class="sprite">🐱</span>
-            <h2>SMURF CAT</h2>
-            <p>WE LIVE WE LOVE WE LIE</p>
+        <div class="card" onclick="action('VOCÊ FOI TAXADO! 👔')">
+            <div class="img-placeholder">👔</div>
+            <h3>THE BLUE TIE</h3>
+            <p>O mestre do Mewing.</p>
         </div>
 
-        <div class="personagem-card" onclick="play('A GRAVATA AZUL TE ENCONTROU! 👔')">
-            <span class="sprite">👔</span>
-            <h2>THE BLUE TIE</h2>
-            <p>NÍVEL DE RIZZ: INFINITO</p>
+        <div class="card" onclick="action('WE LIVE WE LOVE WE LIE! 🍄')">
+            <div class="img-placeholder">🍄</div>
+            <h3>SMURF CAT</h3>
+            <p>A lenda azul de 2026.</p>
         </div>
 
     </div>
 
-    <div class="seven-six-chaos">
-        <h2>A MALDIÇÃO DO:</h2>
-        <div class="number-flash" id="flash">7</div>
-        <p>SIX... SEVEN... SIX... SEVEN...</p>
+    <div class="section-67">
+        <h2>CONTAGEM DOS DEUSES:</h2>
+        <div class="counter-67" id="sixseven">6</div>
+        <p style="font-size: 2rem;">SIX? SEVEN? SIX? SEVEN?</p>
     </div>
 
-    <div style="text-align: center; padding-bottom: 100px;">
-        <button class="btn-sound" onclick="play('VOCÊ FOI TAXADO PELO FANUM! 🍔')">FANUM TAX 🍔</button>
-        <button class="btn-sound" onclick="play('ERM... WHAT THE SIGMA? 🤓')">WHAT THE SIGMA? 🤓</button>
-        <button class="btn-sound" onclick="play('POV: VOCÊ ESTÁ EM OHIO! 💀')">VIAJAR PARA OHIO 💀</button>
-    </div>
+    <button class="btn-tung" onclick="tungTungMode()">MODO TUNG TUNG! 💥</button>
+
+    <footer style="padding: 50px; background: #111;">
+        <p>100% BRAINROT - SEM RIZZ, SEM GANHO 🗿</p>
+    </footer>
 
     <script>
-        // Função para os personagens "falarem"
-        function play(msg) {
+        // Lógica do 67
+        const display = document.getElementById('sixseven');
+        setInterval(() => {
+            display.innerText = display.innerText === "6" ? "7" : "6";
+        }, 200);
+
+        // Função de clique
+        function action(msg) {
             alert(msg);
-            document.body.style.filter = "invert(100%)";
-            setTimeout(() => {
-                document.body.style.filter = "invert(0%)";
-            }, 100);
         }
 
-        // Efeito visual do 6 e 7
-        const flash = document.getElementById('flash');
-        setInterval(() => {
-            flash.innerText = flash.innerText === "7" ? "6" : "7";
-            flash.style.color = flash.innerText === "7" ? "#ff0000" : "#0000ff";
-        }, 300);
+        // Modo Tung Tung (Deixa tudo maluco)
+        function tungTungMode() {
+            document.body.style.animation = "shake 0.1s infinite";
+            const audio = new Audio('https://www.myinstants.com/media/sounds/tung-tung-sahur.mp3'); // Tentativa de carregar som
+            audio.play().catch(() => alert("TUNG TUNG TUNG TUNG! 🥁"));
+            
+            setTimeout(() => {
+                document.body.style.animation = "";
+            }, 3000);
+        }
     </script>
+
+    <style>
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            30% { transform: translate(-3px, 0px) rotate(1deg); }
+            50% { transform: translate(3px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+    </style>
 
 </body>
 </html>
+
