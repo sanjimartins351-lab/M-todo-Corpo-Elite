@@ -1,94 +1,202 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacker Terminal</title>
+    <title>Pizzaria Jacinto Leite Ladentro</title>
     <style>
-        /* Estética Hacker / Terminal */
-        body {
-            background-color: #0a0a0a;
-            color: #00ff41; /* Verde clássico do Matrix */
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            overflow-x: hidden;
+        :root {
+            --vermelho: #c0392b;
+            --amarelo: #f1c40f;
+            --verde: #27ae60;
+            --escuro: #2c3e50;
+            --claro: #fdf2e9;
         }
 
-        /* Efeito de Scanline (linhas de TV antiga) */
-        body::before {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 2;
-            background-size: 100% 2px, 3px 100%;
-            pointer-events: none;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--claro);
+            color: #333;
+        }
+
+        header {
+            background-color: var(--vermelho);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 10px solid var(--amarelo);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 3px 3px 0px var(--escuro);
+        }
+
+        header p {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-top: 10px;
         }
 
         .container {
-            width: 80%;
-            max-width: 800px;
-            border: 1px solid #00ff41;
+            max-width: 900px;
+            margin: 0 auto;
             padding: 20px;
-            box-shadow: 0 0 15px #00ff41;
-            background: rgba(0, 20, 0, 0.9);
         }
 
-        h1 {
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            text-shadow: 2px 2px #ff0000; /* Detalhe em vermelho para contraste */
-            border-bottom: 2px solid #00ff41;
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--vermelho);
+            border-left: 5px solid var(--verde);
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        .cardapio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .pizza-item {
+            border-bottom: 2px dashed #ddd;
             padding-bottom: 10px;
         }
 
-        .blink {
-            animation: blinker 1s linear infinite;
+        .pizza-nome {
+            font-weight: bold;
+            color: var(--escuro);
+            display: flex;
+            justify-content: space-between;
         }
 
-        @keyframes blinker {
-            50% { opacity: 0; }
+        .preco {
+            color: var(--verde);
         }
 
-        .content {
-            line-height: 1.6;
-            font-size: 1.1rem;
+        .descricao {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .processo-lista {
+            list-style: none;
+            padding: 0;
+        }
+
+        .processo-lista li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+        }
+
+        .processo-lista li::before {
+            content: "🍕";
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .destaque-guararema {
+            background-color: var(--escuro);
+            color: var(--amarelo);
+            text-align: center;
+            padding: 40px;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 15px;
+            margin-top: 50px;
         }
 
         footer {
-            margin-top: 20px;
+            text-align: center;
+            padding: 20px;
             font-size: 0.8rem;
-            color: #008f11;
+            color: #888;
+        }
+
+        /* Animação divertida para o título */
+        @keyframes balanco {
+            0% { transform: rotate(-1deg); }
+            50% { transform: rotate(1deg); }
+            100% { transform: rotate(-1deg); }
+        }
+
+        .animar {
+            display: inline-block;
+            animation: balanco 2s infinite ease-in-out;
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <h1 class="animar">JACINTO LEITE LADENTRO</h1>
+        <p>"A única pizza que te abraça por dentro!"</p>
+    </header>
+
     <div class="container">
-        <h1>SISTEMA INVADIDO <span class="blink">_</span></h1>
         
-        <div class="content">
-            <p>> [STATUS]: Conexão estabelecida...</p>
-            <p>> [ALVO]: Informação descentralizada.</p>
-            <p>> [MENSAGEM]: Aqui você pode inserir o seu texto explicativo. Use parágrafos curtos para manter o estilo de terminal.</p>
-            
-            <hr style="border: 0.5px solid #00ff41;">
-            
-            <h3>Tópico de Análise 01</h3>
-            <p>Insira seus argumentos ou dados aqui. A estética hacker favorece listas e códigos.</p>
+        <section class="section">
+            <h2>Nosso Cardápio Arrebatador</h2>
+            <div class="cardapio-grid">
+                <div class="pizza-item">
+                    <div class="pizza-nome"><span>Calabresa Jacinto</span> <span class="preco">45€</span></div>
+                    <p class="descricao">Calabresa crocante, muita cebola e o segredo do chef.</p>
+                </div>
+                <div class="pizza-item">
+                    <div class="pizza-nome"><span>Quatro Queijos Explosiva</span> <span class="preco">52€</span></div>
+                    <p class="descricao">Mussarela, Gorgonzola, Provolone e Catupiry para derreter o coração.</p>
+                </div>
+                <div class="pizza-item">
+                    <div class="pizza-nome"><span>Frango com Catupiry</span> <span class="preco">48€</span></div>
+                    <p class="descricao">Frango desfiado com carinho e uma montanha de cremosidade.</p>
+                </div>
+                <div class="pizza-item">
+                    <div class="pizza-nome"><span>Portuguesa Especial</span> <span class="preco">50€</span></div>
+                    <p class="descricao">O clássico que nunca falha: ovo, presunto, ervilha e alegria.</p>
+                </div>
+                <div class="pizza-item">
+                    <div class="pizza-nome"><span>Moda do Jacinto</span> <span class="preco">55€</span></div>
+                    <p class="descricao">Bacon, milho, palmito e tudo o que há de bom.</p>
+                </div>
+                <div class="pizza-item">
+                    <div class="pizza-nome"><span>Chocolate e Paçoca</span> <span class="preco">42€</span></div>
+                    <p class="descricao">Para quando a fome de doce bate mais forte que o Jacinto.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Como é feita a Mágica?</h2>
+            <ul class="processo-lista">
+                <li><strong>Massa Relaxada:</strong> A nossa massa descansa 24h. Ela é mais calma que monge tibetano, por isso fica tão leve.</li>
+                <li><strong>Tomates Felizes:</strong> Selecionamos os tomates que mais sorriem na horta para fazer o molho.</li>
+                <li><strong>Forno Vulcânico:</strong> Usamos um forno tão quente que a pizza fica pronta antes de tu terminares de dizer o nome da pizzaria.</li>
+                <li><strong>Amor em Dobro:</strong> Cada fatia é cortada com precisão matemática para ninguém brigar pelo pedaço maior.</li>
+            </ul>
+        </section>
+
+        <div class="destaque-guararema">
+            🏆 A MELHOR PIZZARIA DE GUARAREMA! 🏆
         </div>
+
     </div>
 
     <footer>
-        &copy; 2026 - Terminal de Acesso Privado
+        &copy; 2026 Pizzaria Jacinto Leite Ladentro - Sabor que entra e fica.
     </footer>
 
 </body>
