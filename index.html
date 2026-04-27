@@ -3,67 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Gatinhos</title>
+    <title>O Menino Ney</title>
     <style>
+        /* Estilo do Fundo */
         body {
+            margin: 0;
+            padding: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #009739 0%, #fed100 100%); /* Cores do Brasil */
+            font-family: 'Arial Black', sans-serif;
+            overflow: hidden;
         }
 
-        #cat-button {
-            padding: 20px 40px;
-            font-size: 24px;
-            background-color: #ff4d4d;
+        /* Botão Central */
+        #btn-neymar {
+            padding: 30px 60px;
+            font-size: 2rem;
+            background-color: #002776;
             color: white;
-            border: none;
-            border-radius: 50px;
+            border: 5px solid white;
+            border-radius: 100px;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.2s, background-color 0.2s;
+            text-transform: uppercase;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: all 0.2s ease;
         }
 
-        #cat-button:hover {
-            background-color: #ff3333;
-            transform: scale(1.05);
+        #btn-neymar:hover {
+            transform: scale(1.1);
+            background-color: #001a50;
         }
 
-        #cat-button:active {
-            transform: scale(0.95);
+        #btn-neymar:active {
+            transform: scale(0.9);
         }
 
-        #cat-container {
-            margin-top: 30px;
-            max-width: 90%;
+        /* Overlay da Tela Cheia */
+        #fullscreen-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: none; /* Escondido por padrão */
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
         }
 
-        img {
+        #fullscreen-overlay img {
             max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            display: none; /* Esconde a imagem inicialmente */
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* Botão para Sair da Tela Cheia */
+        #btn-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: sans-serif;
+            border-radius: 5px;
+        }
+
+        #btn-close:hover {
+            background: rgba(255,255,255,0.5);
         }
     </style>
 </head>
 <body>
 
-    <button id="cat-button" onclick="showCat()">ME CLIQUE!</button>
+    <button id="btn-neymar" onclick="ativarNeymar()">VER O ADULTO NEY</button>
 
-    <div id="cat-container">
-        <img id="cat-image" src="" alt="Gatinho fofo">
+    <div id="fullscreen-overlay">
+        <button id="btn-close" onclick="fecharNeymar()">SAIR X</button>
+        <img src="https://tm.ibxk.com.br/2022/11/24/24183515082186.jpg" alt="Neymar Jr">
     </div>
 
     <script>
-        function showCat() {
-            const img = document.getElementById('cat-image');
-            // Gera um link aleatório para evitar cache e sempre mostrar um gato novo
-            img.src = "https://cataas.com/cat?width=500&height=500&" + new Date().getTime();
-            img.style.display = "block";
+        function ativarNeymar() {
+            // Mostra o overlay
+            const overlay = document.getElementById('fullscreen-overlay');
+            overlay.style.display = 'flex';
+            
+            // Tenta colocar o navegador em tela cheia de verdade (opcional)
+            if (overlay.requestFullscreen) {
+                overlay.requestFullscreen();
+            }
+        }
+
+        function fecharNeymar() {
+            // Esconde o overlay
+            const overlay = document.getElementById('fullscreen-overlay');
+            overlay.style.display = 'none';
+
+            // Sai da tela cheia do navegador
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
         }
     </script>
 
