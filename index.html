@@ -3,248 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizzaria Jacinto Leite Ladentro - A Melhor de Guararema</title>
+    <title>BRAINROT MÁXIMO 💀🤫</title>
     <style>
-        /* Variáveis de Cores */
+        /* ESTILO NEON E CAÓTICO */
         :root {
-            --primary: #ff4757;
-            --secondary: #ffa502;
-            --accent: #2ed573;
-            --dark: #2f3542;
-            --light: #ffffff;
+            --neon-green: #39ff14;
+            --neon-pink: #ff00ff;
+            --neon-blue: #00ffff;
+            --ohio-orange: #ff6600;
         }
 
-        /* Fundo Animado e Texturizado */
         body {
             margin: 0;
-            font-family: 'Comic Sans MS', 'Arial', sans-serif;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            background-image: radial-gradient(rgba(255,255,255,0.2) 2px, transparent 2px);
-            background-size: 30px 30px, 400% 400%; /* Mistura de textura com gradiente */
-            color: var(--dark);
+            padding: 0;
+            background-color: #000;
+            font-family: 'Impact', sans-serif;
+            color: #fff;
             overflow-x: hidden;
+            /* Textura de fundo caótica */
+            background-image: radial-gradient(circle, #1a1a1a 10%, transparent 10%);
+            background-size: 20px 20px;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* TÍTULO VIBRANTE */
+        .vibrar {
+            display: inline-block;
+            animation: tremor 0.1s infinite;
+            font-size: 5rem;
+            color: var(--neon-green);
+            text-shadow: 4px 4px var(--neon-pink), -4px -4px var(--neon-blue);
+            margin: 20px 0;
         }
 
-        /* Cabeçalho Flutuante */
+        @keyframes tremor {
+            0% { transform: translate(2px, 1px) rotate(0deg); }
+            20% { transform: translate(-1px, -2px) rotate(-1deg); }
+            40% { transform: translate(-3px, 0px) rotate(1deg); }
+            60% { transform: translate(3px, 2px) rotate(0deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
         header {
             text-align: center;
-            padding: 60px 20px;
-            background: rgba(255, 255, 255, 0.9);
-            margin: 20px;
-            border-radius: 30px;
-            border: 5px solid var(--secondary);
-            box-shadow: 10px 10px 0px var(--dark);
+            padding: 40px;
+            background: linear-gradient(180deg, var(--neon-pink) 0%, transparent 100%);
         }
 
-        header h1 {
-            font-size: 3.5rem;
-            color: var(--primary);
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            transform: rotate(-2deg);
-        }
-
-        .badge {
-            background: var(--accent);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            display: inline-block;
-            font-weight: bold;
-            margin-top: 15px;
-            box-shadow: 4px 4px 0px var(--dark);
-        }
-
-        /* Seções */
+        /* CARD DE MEMES */
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 25px;
-            padding: 30px;
-            margin-bottom: 40px;
-            border: 4px solid var(--dark);
-            box-shadow: 15px 15px 0px rgba(0,0,0,0.2);
-        }
-
-        /* Cardápio Divertido */
-        .grid-pizzas {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .pizza-box {
-            background: #fff3e0;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             padding: 20px;
+        }
+
+        .meme-card {
+            background: #111;
+            border: 5px solid var(--neon-blue);
             border-radius: 20px;
-            border: 3px solid var(--secondary);
-            transition: all 0.3s ease;
+            padding: 20px;
+            text-align: center;
+            transition: 0.2s;
             cursor: pointer;
-            position: relative;
+            box-shadow: 0 0 20px var(--neon-blue);
         }
 
-        .pizza-box:hover {
-            transform: scale(1.05) rotate(2deg);
-            background: var(--secondary);
-            color: white;
+        .meme-card:hover {
+            transform: scale(1.1) rotate(3deg);
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 40px var(--neon-pink);
+            background: #222;
         }
 
-        .pizza-box h3 {
-            margin-top: 0;
-            display: flex;
-            justify-content: space-between;
+        .meme-card img {
+            width: 100%;
+            border-radius: 10px;
         }
 
-        /* O Segredo do Jacinto */
-        .passo-a-passo {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+        .meme-card h2 {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+
+        /* SEÇÃO SIX SEVEN */
+        .six-seven-zone {
+            background: var(--ohio-orange);
+            color: #000;
+            padding: 50px;
             text-align: center;
+            border: 10px solid #fff;
+            margin: 40px 0;
+            transform: skewY(-2deg);
         }
 
-        .passo {
-            flex: 1;
-            min-width: 200px;
-            padding: 15px;
+        .number-count {
+            font-size: 8rem;
+            font-weight: 900;
+            animation: bounce 0.5s infinite alternate;
         }
 
-        .icon {
-            font-size: 3rem;
+        @keyframes bounce {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+
+        /* BOTÃO INTERATIVO */
+        .btn-brainrot {
             display: block;
-            margin-bottom: 10px;
-        }
-
-        /* Rodapé de Guararema */
-        .footer-cta {
-            background: var(--dark);
-            color: var(--amarelo);
-            padding: 50px 20px;
-            text-align: center;
-            border-radius: 50% 50% 0 0 / 20px 20px 0 0;
-        }
-
-        .footer-cta h2 {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin: 0;
-        }
-
-        .highlight-text {
-            color: var(--accent);
-            font-size: 1.5rem;
-            display: block;
-            margin-top: 10px;
-        }
-
-        /* Botão de Pedido */
-        .btn-order {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 20px 40px;
-            border-radius: 50px;
-            text-decoration: none;
+            width: 80%;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 25px;
+            background: var(--neon-green);
+            color: #000;
+            font-size: 2rem;
             font-weight: bold;
-            font-size: 1.5rem;
-            margin-top: 30px;
-            border: 4px solid white;
-            animation: pulse 2s infinite;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 0 #15803d;
+            transition: 0.1s;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        .btn-brainrot:active {
+            transform: translateY(10px);
+            box-shadow: 0 0 0 #000;
+        }
+
+        marquee {
+            font-size: 2.5rem;
+            background: #fff;
+            color: #000;
+            font-weight: bold;
+            padding: 10px 0;
         }
     </style>
 </head>
 <body>
 
+    <marquee scrollamount="20">SKIBIDI TOILET RIZZ 🚽 SIGMA MALE 🤫🧏‍♂️ ONLY IN OHIO 💀 FANUM TAX 🍔 MEWING 🗿 GRIMACE SHAKE 🥤</marquee>
+
     <header>
-        <h1>JACINTO LEITE LADENTRO</h1>
-        <p>A Pizzaria que é um verdadeiro espetáculo no seu paladar!</p>
-        <div class="badge">🔥 FORNO A LENHA 24H 🔥</div>
+        <h1 class="vibrar">BRAINROT CENTRAL</h1>
+        <p style="font-size: 1.5rem;">VOCÊ TEM O RIZZ? 🤫🧏‍♂️</p>
     </header>
 
     <div class="container">
-        
-        <section class="card">
-            <h2>🍕 Cardápio de Outro Planeta</h2>
-            <div class="grid-pizzas">
-                <div class="pizza-box">
-                    <h3><span>Calabresa Turbo</span> <span>R$ 49</span></h3>
-                    <p>Calabresa defumada, cebolas caramelizadas e azeitonas que brilham no escuro.</p>
-                </div>
-                <div class="pizza-box">
-                    <h3><span>4 Queijos Galáctico</span> <span>R$ 55</span></h3>
-                    <p>Uma explosão de queijos que derretem mais que gelo no deserto.</p>
-                </div>
-                <div class="pizza-box">
-                    <h3><span>Bacon Supreme</span> <span>R$ 52</span></h3>
-                    <p>Tiras de bacon tão crocantes que os vizinhos vão ouvir você comendo.</p>
-                </div>
-                <div class="pizza-box">
-                    <h3><span>Frango Catupira</span> <span>R$ 50</span></h3>
-                    <p>Frango desfiado com o legítimo Catupiry. É cremosidade que não acaba mais!</p>
-                </div>
-                <div class="pizza-box">
-                    <h3><span>Jacinto Especial</span> <span>R$ 60</span></h3>
-                    <p>Lombo, palmito, ovos, mussarela e o toque secreto do Jacinto.</p>
-                </div>
-                <div class="pizza-box">
-                    <h3><span>Doce Estelar</span> <span>R$ 45</span></h3>
-                    <p>Chocolate belga com morangos frescos e granulado colorido.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="card">
-            <h2>🛠️ Como Fabricamos essa Obra de Arte?</h2>
-            <div class="passo-a-passo">
-                <div class="passo">
-                    <span class="icon">🥣</span>
-                    <h3>Massa Ninja</h3>
-                    <p>Nossa massa é treinada por 48h para ser leve, fina e resistente.</p>
-                </div>
-                <div class="passo">
-                    <span class="icon">🍅</span>
-                    <h3>Molho Atômico</h3>
-                    <p>Tomates colhidos manualmente e temperados com ervas raras.</p>
-                </div>
-                <div class="passo">
-                    <span class="icon">🔥</span>
-                    <h3>Calor Infinito</h3>
-                    <p>Nosso forno não descansa. É fogo, lenha e tradição!</p>
-                </div>
-            </div>
-        </section>
-
-        <div style="text-align: center;">
-            <a href="#" class="btn-order">PEDIR AGORA (VIA WHATSAPP)</a>
+        <div class="meme-card">
+            <div style="font-size: 5rem;">🚽</div>
+            <h2>SKIBIDI</h2>
+            <p>DOP DOP YES YES</p>
         </div>
 
+        <div class="meme-card">
+            <div style="font-size: 5rem;">🤫🧏‍♂️</div>
+            <h2>SIGMA</h2>
+            <p>MEWING EM PROGRESSO...</p>
+        </div>
+
+        <div class="meme-card">
+            <div style="font-size: 5rem;">💀</div>
+            <h2>OHIO</h2>
+            <p>LEIS DA FÍSICA: OFF</p>
+        </div>
     </div>
 
-    <div class="footer-cta">
-        <h2>🏆 A MELHOR PIZZARIA DE GUARAREMA</h2>
-        <span class="highlight-text">Sabor inigualável, diversão garantida!</span>
-        <p style="margin-top: 30px;">Endereço: Rua do Sabor, 999 - Centro - Guararema/SP</p>
+    <div class="six-seven-zone">
+        <h2>CONTAGEM REGRESSIVA DO BRAINROT:</h2>
+        <div class="number-count" id="counter">7</div>
+        <p style="font-size: 2rem;">SIX... SEVEN... EIGHT...</p>
     </div>
+
+    <button class="btn-brainrot" onclick="ganharRizz()">GANHAR +1000 RIZZ! 🔥</button>
+
+    <div style="text-align: center; padding: 50px;">
+        <p>Atenção: Este site derrete 1% do cérebro por segundo.</p>
+    </div>
+
+    <script>
+        // Lógica do botão interativo
+        function ganharRizz() {
+            const sons = ["SKIBIDI!", "SIGMA!", "OHIO!", "FANUM TAX!", "QUE RIZZ É ESSE?!"];
+            const aleatorio = sons[Math.floor(Math.random() * sons.length)];
+            alert(aleatorio + " Você agora é um Sigma Nível 100! 🗿🍷");
+        }
+
+        // Lógica do contador Six Seven
+        let count = 7;
+        setInterval(() => {
+            count = count === 7 ? 6 : 7;
+            document.getElementById('counter').innerText = count;
+        }, 500);
+    </script>
 
 </body>
 </html>
